@@ -27,15 +27,115 @@ this assignment.  For each question supply graphical evidence, numerical summari
 
 ### Do people who believe in Love at First sight also tend to believe in Life on other planets?
 
-  
-  
-    
+$H_0$: There is no relation between belief in love at first and belief in life on other planets
+
+$H_A$: There is a relationship between belief in love at first sight and belief on other planets
+
+
+
+ Graphic display 
+
+```{r}
+barchartGC(~love_first + extra_life,data=mydata, xlab="love @ first sight")
+```
+
+People who believe in love at first sight also tend to believe in life on other planets
+
+Numerical summary
+
+```{r}
+table1 <- xtabs(~love_first + extra_life, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+looks about the same
+
+Inference
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+We fail to reject the hypothsis because the p value is higher than 0.05
+
+
 # Your second Question  
 
 ### Is there a difference between boys and girls with respect to belief in life on other planets?
-  
+
+$H_0$: There is no relation between boys and girls with respect to life on other planets
+
+$H_A$: There is a relation btween boys and girls with respect to life on other planets
+
  
+Graphical summary  
  
+```{r}
+barchartGC(~sex+ extra_life,data=mydata)
+```
+
+Boys believe there is life on other planets
+
+
+
+Numerical summary
+
+```{r}
+table1 <- xtabs(~sex + extra_life, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Looks about the same
+
+
+Inference
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+We fail to reject the hypothis because the p value is higher than 0.05
+
+
+
+
 # Your last Question   
 
 ### Is there a difference between boys and girls with respect to belief in love at First sight?
+
+$H_0$: There is no relation between boys and girls with respect to love at first sight
+
+$H_A$: There is a relation between boys and girls with respect to love at first sight
+
+
+Graphical summary
+
+```{r}
+barchartGC(~sex + love_first,data=mydata)
+```
+Boys do not believe in love at first sight over girls
+
+
+Numerical summary
+
+```{r}
+table1 <- xtabs(~sex + love_first, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Girls believe in love at first sight over boys
+
+
+Inference
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+We fail to reject the hypothis becsuse the p value is higher than 0.05
