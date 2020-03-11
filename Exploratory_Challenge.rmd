@@ -1,0 +1,45 @@
+---
+title: "Exploratory Challenge"
+author: "Your Name here"
+date: "Spring 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(tigerstats)
+help("m111surveyfa13")
+mydata<-m111surveyfa13 <- na.omit(m111surveyfa13)
+```
+
+# Exploratory Challenge
+
+1.Your data is in the dataframe called "mydata" examine it in the environment tab  
+do a variable analysis on its contents. Find a two level factor variable and a numerical variable whose results when testing equality of means has a probability of occurance less than .001
+
+
+2.Find a three or more level factor variable and a numeric variable  whose results when testing equality of means has a probability of occurance greater than .65 .  Make a TukeyHSD plot of the
+results of the model for your answer
+
+
+3.Find two numeric variables whose correlation is greater than .85 and plot them with appropriate
+labels.
+
+
+# Your First Challenge 
+
+### 
+
+  
+  
+    
+# Your second Challenge 
+
+### 
+  
+ 
+ 
+# Your last Challenge  
+
+### Below is a scatterplot with a linear fit of my chosen variables
